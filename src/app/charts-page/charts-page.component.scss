@@ -1,0 +1,65 @@
+$title-color-white: #FFFFFF;
+
+.charts-wrapper {
+  max-width: 100%;
+  min-height: 100%;
+  color: $title-color-white;
+}
+.charts-container {
+  padding: 0 130px;
+}
+.charts-inner {
+  ul li {
+    display: inline;
+  }
+  .nav {
+    margin:24px 0px ;
+  }
+  a {
+    font-size: 16px;
+    line-height: 20px;
+    color:#CCCCCC;
+
+    &:active {
+      color: #3A80BA;
+    }
+    &:hover {
+      color: #3A80BA;
+    }
+
+  }
+  .active {
+      color: #3A80BA;
+    }
+  .charts-title {
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 39px;
+    color: #1A1A1A;
+  }
+}
+
+.charts {
+  .title {
+    font-size: 24px;
+    line-height: 29px;
+    margin: 24px 0;
+    color:#1A1A1A;
+    font-weight: bold;
+  }
+}
+chart {
+  width: 100%;
+  height: 500px;
+}
+@media (max-width: 767px) {
+  .charts-container {
+    padding: 0 50px;
+  }
+}
+@media (min-width: 767px) {
+  .charts-container {
+    padding: 0 130px;
+  }
+}
+

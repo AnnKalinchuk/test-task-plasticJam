@@ -1,0 +1,81 @@
+ul li {
+  display: inline-block;
+  text-align: center;
+}
+.pagination {
+  margin-top:24px;
+  text-align: center;
+}
+.page-item {
+    width: 48px;
+    height: 48px;
+    margin: 0 4px;
+}
+.previous-item a, .next-item a {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+
+}
+.number-item a {
+    line-height: 48px;
+    display: block;
+}
+.previous-item {
+  background: url(../../../assets/images/arrow-left-blue.png) no-repeat center;
+  cursor: pointer;
+
+  &.disabled {
+    background: url(../../../assets/images/arrow-left.png) no-repeat center;
+    cursor: default;
+    a {
+      pointer-events: none;
+    }
+  }
+}
+.next-item  {
+  background: url(../../../assets/images/arrow-right-blue.png) no-repeat center;
+  cursor: pointer;
+
+  &.disabled {
+    background: url(../../../assets/images/arrow-right.png) no-repeat center;
+    cursor: default;
+    a {
+      pointer-events: none;
+
+    }
+  }
+}
+
+.number-item {
+  border: 2px solid #F1F1F1;
+  box-sizing: border-box;
+  border-radius: 8px;
+  color: #1A1A1A;
+  cursor: pointer;
+
+  &.active {
+    border-color:#3A80BA;
+    background-color: #3A80BA;
+    color: #FFFFFF;
+  }
+}
+
+@media (max-width: 975px) {
+  .page-item {
+    width: 30px;
+    height: 30px;
+    margin: 0 2px;
+  }
+
+  .number-item a {
+    line-height: 30px;
+    display: block;
+  }
+  .previous-item a, .next-item a {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+  }
+}
+

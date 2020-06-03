@@ -1,0 +1,132 @@
+$table-border-radius: 0.5em;
+$title-color-white: #FFFFFF;
+$margin-bottom: 24px;
+
+.stats-wrapper {
+  max-width: 100%;
+  min-height: 100%;
+  color: $title-color-white;
+}
+.stats-container {
+  padding: 0 130px;
+}
+
+table {
+  width: 100%;
+
+}
+.mat-table {
+  background-color:transparent!important;
+  box-shadow: none;
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  margin-top: 24px;
+  border-spacing: 2px;
+  border-collapse: separate;
+}
+td.mat-cell, td.mat-footer-cell, th.mat-header-cell {
+  padding: 0 12px;
+  border-bottom-style: none;
+}
+td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type, th.mat-header-cell:first-of-type {
+  padding: 0 12px;
+
+}
+
+::ng-deep table tr:last-child td {
+  border-bottom:0 solid;
+}
+::ng-deep .mat-header-cell {
+  background-color:#3A80BA;
+  color: #FFFFFF;
+}
+::ng-deep .mat-header-cell:first-child {
+  border-top-left-radius: $table-border-radius;
+}
+::ng-deep .mat-header-cell:last-child {
+  border-top-right-radius: $table-border-radius;
+}
+::ng-deep .mat-row:last-child td:first-child {
+  border-bottom-left-radius: $table-border-radius;
+}
+::ng-deep .mat-row:last-child td:last-child {
+  border-bottom-right-radius: $table-border-radius;
+}
+::ng-deep tr.mat-footer-row, tr.mat-row {
+  height: 32px;
+}
+::ng-deep td.mat-cell, ::ng-deep td.mat-footer-cell, ::ng-deep th.mat-header-cell {
+  border-bottom-style: none;
+  padding-left: 24px;
+}
+::ng-deep .mat-header-cell {
+  background-color:#3A80BA;
+  font-size: 16px;
+  line-height: 20px;
+  padding-left: 24px;
+  color: #FFFFFF;
+}
+.mat-row:nth-child(odd) {
+  background-color:  #FBFBFB;
+}
+.mat-row:nth-child(even) {
+  background-color: #F1F1F1;
+}
+
+.stats-inner {
+
+  ul li {
+    display: inline;
+  }
+  .nav {
+    margin:24px 0px ;
+  }
+  a {
+    font-size: 16px;
+    line-height: 20px;
+    color:#CCCCCC;
+
+    &:active {
+      color: #3A80BA;
+    }
+    &:hover {
+      color: #3A80BA;
+    }
+
+  }
+  .active {
+      color: #3A80BA;
+    }
+  .stats-title {
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 39px;
+    color: #1A1A1A;
+  }
+
+  table {
+    a {
+        color: #1A1A1A;
+        font-size: 14px;
+
+        &:hover {
+          color:#3A80BA;
+        }
+
+    }
+  }
+}
+
+
+@media (max-width: 767px) {
+  .stats-container {
+    padding: 0 50px;
+  }
+}
+@media (min-width: 767px) {
+  .stats-container {
+    padding: 0 130px;
+  }
+}
+

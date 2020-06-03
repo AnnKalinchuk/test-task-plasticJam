@@ -1,0 +1,70 @@
+<div class="stats-wrapper">
+  <app-header></app-header>
+  <div class="stats-inner stats-container">
+    <div class="nav">
+       <ul>
+        <li><a [routerLink]="'/main'">Main page  <span style="color:#CCCCCC; font-size: 16px;">&#8250;</span></a></li>
+        <li><a [routerLink]="'/stats'" class="active"> Users statistics</a></li>
+      </ul>
+    </div>
+    <div class="stats-title">
+      Users statistics
+    </div>
+ <div class="table-bacground">
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef>Id</th>
+          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="firstName">
+          <th mat-header-cell *matHeaderCellDef>First name</th>
+          <td mat-cell *matCellDef="let element">
+            <a [routerLink]="[element.id]"
+            [queryParams]="{'firstName': element.firstName, 'lastName': element.lastName}"
+            >{{element.firstName}}</a></td>
+        </ng-container>
+
+        <ng-container matColumnDef="lastName">
+          <th mat-header-cell *matHeaderCellDef>Last name</th>
+          <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef> Email </th>
+          <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="gender">
+          <th mat-header-cell *matHeaderCellDef> Gender </th>
+          <td mat-cell *matCellDef="let element"> {{element.gender}} </td>
+        </ng-container>
+        <ng-container matColumnDef="ipAddress">
+          <th mat-header-cell *matHeaderCellDef> IP address </th>
+          <td mat-cell *matCellDef="let element"> {{element.ipAddress}} </td>
+        </ng-container>
+        <ng-container matColumnDef="totalClicks">
+          <th mat-header-cell *matHeaderCellDef> Total clicks </th>
+          <td mat-cell *matCellDef="let element"> {{element.totalClicks}} </td>
+        </ng-container>
+        <ng-container matColumnDef="totalPageViews">
+          <th mat-header-cell *matHeaderCellDef> Total page views </th>
+          <td mat-cell *matCellDef="let element"> {{element.totalPageViews}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+
+<div class="pagination">
+  <app-jw-pagination
+        *ngIf = "usersCountTotal"
+        [itemsCountOnPage]="usersCountOnPage"
+        [itemsCountTotal]="usersCountTotal"
+        (changePage)="onChangePage($event)"></app-jw-pagination>
+</div>
+  </div>
+
+</div>
+<app-footer></app-footer>
