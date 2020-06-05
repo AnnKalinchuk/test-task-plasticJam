@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UsersService } from '../shared/service/users.service';
 import * as moment from 'moment';
 import { UserResponse } from '../shared/models/users.response.model';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-charts-page',
   templateUrl: './charts-page.component.html',
   styleUrls: ['./charts-page.component.scss']
 })
-export class ChartsPageComponent implements OnInit {
+export class ChartsPageComponent implements OnInit, OnDestroy {
 
   firstName: string;
   lastName: string;
@@ -17,6 +18,8 @@ export class ChartsPageComponent implements OnInit {
 
   fromDateM: string;
   toDateM: string;
+
+  sub: Subscription;
 
   type = 'line';
   chartDataClicks = {
@@ -102,7 +105,7 @@ export class ChartsPageComponent implements OnInit {
               this.toDateM = dateM.format('YYYY.MM.DD');
                 // tslint:disable-next-line: deprecation
               this.fromDateM = dateM.subtract( 6, 'days').format('YYYY.MM.DD');
-              this.usersService.getUsersStatistics(this.userId, this.fromDateM, this.toDateM).subscribe(userStatisticsRes => {
+              this.sub = this.usersService.getUsersStatistics(this.userId, this.fromDateM, this.toDateM).subscribe(userStatisticsRes => {
                   const clicksArray = userStatisticsRes.map(value => value.clicks);
                   const dates = userStatisticsRes.map(x => x.date);
                   const datesM = dates.map(x => moment(x).format('YYYY:MM:DD'));
@@ -126,5 +129,9 @@ export class ChartsPageComponent implements OnInit {
           // tslint:disable-next-line: no-string-literal
           this.lastName = queryParams['lastName'];
     });
+  }
+
+  ngOnDestroy() {
+    this.sub.unsubscribe();
   }
 }

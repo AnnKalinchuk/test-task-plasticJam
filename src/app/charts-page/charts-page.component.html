@@ -3,9 +3,10 @@
   <div class="charts-inner charts-container">
     <div class="charts-inner ">
       <div class="nav">
-         <ul>
-          <li><a [routerLink]="'/main'">Main page  <span style="color:#CCCCCC; font-size: 16px;">&#8250;</span></a></li>
-          <li><a [routerLink]="'/stats'" > Users statistics  <span style="color:#CCCCCC; font-size: 16px;">&#8250;</span></a></li>
+        <ul>
+          <li><a [routerLink]="'/main'">Main page <span style="color:#CCCCCC; font-size: 16px;">&#8250;</span></a></li>
+          <li><a [routerLink]="'/stats'"> Users statistics <span
+                style="color:#CCCCCC; font-size: 16px;">&#8250;</span></a></li>
           <li><a class="active"> {{firstName}} {{lastName}}</a></li>
         </ul>
       </div>
@@ -19,11 +20,9 @@
         </div>
         <div class="chart-views">
           <div class="title">Views</div>
-        <chart [type]="type" [data]="chartDataViews" [options]="optionsViews"></chart>
+          <chart [type]="type" [data]="chartDataViews" [options]="optionsViews"></chart>
         </div>
       </div>
-
+    </div>
   </div>
-</div>
-<app-footer></app-footer>
-
+  <app-footer></app-footer>

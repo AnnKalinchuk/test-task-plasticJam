@@ -27,6 +27,16 @@ $title-color-white: #FFFFFF;
   .footer-container {
     padding: 0 50px;
   }
+  .footer {
+     .footer-title {
+        font-size: 22px;
+        line-height: 27px;
+    }
+    .footer-text {
+        font-size: 11px;
+    }
+  }
+
 }
 @media (min-width: 767px) {
   .footer-container {
