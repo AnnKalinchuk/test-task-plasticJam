@@ -26,9 +26,10 @@
     "jw-angular-pagination": "^1.1.0",
     "jw-paginate": "^1.0.4",
     "moment": "^2.26.0",
+    "reflect-metadata": "^0.1.13",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
-    "zone.js": "~0.9.1"
+    "zone.js": "^0.9.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.803.24",
